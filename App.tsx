@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react'
+import { View } from 'react-native'
+import { Center } from 'native-base'
+import AppContainer from './screen/app-container'
+import ThemeToggle from './components/theme-toggle'
+import LogScreen from './components/logScreen'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AppContainer>
+      <Center _light={{ bg: "blueGray.50" }} _dark={{ bg: "blueGray.900" }} px={5} flex={1}>
+        <View>
+          <LogScreen/>
+          <ThemeToggle/>
+        </View>
+      </Center>
+    </AppContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
