@@ -15,11 +15,12 @@ export default function MainScreen() {
       subject: `[${new Date().toLocaleString()}] ${arg}`,
     }
     setLogs([newLog, ...logs])
+    setEditing(false)
   }
 
   return (
     <View>
-      <ScrollView maxH="600">
+      <ScrollView maxH="600" w="300">
         <VStack>
           <LogScreen
             logs={logs}

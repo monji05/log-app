@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import { View, Pressable, Text, Input } from 'native-base'
-import shortid from 'shortid'
 import { Log } from './logScreen'
+import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native'
 
 type Props = {
   item: Log
@@ -14,30 +14,38 @@ type Props = {
 export default function LogItem(props: Props) {
   const {
     item,
-    subject,
     onPress,
     onFinishEditing,
     isEditing,
   } = props
 
+  const [subject, setSubject] = useState(item.subject)
+
+  const onChangeSubject = useCallback((e: NativeSyntheticEvent<TextInputChangeEventData>) => {
+    setSubject(e.nativeEvent.text)
+  }, [])
+
   return (
     <View>
       {
         isEditing ? (
-          <Pressable onPress={onFinishEditing}>
-            <Input
-              value={subject}
-              blur={onFinishEditing}
-              variant="unstyled"
-              px={1}
-              py={0}
-              autoFocus
-              onblur={onFinishEditing}
-            />
-          </Pressable>
+          <Input
+            value={subject}
+            variant="underline"
+            fontSize={14}
+            px={1}
+            py={0}
+            autoFocus
+            onblur={onFinishEditing}
+            onChange={onChangeSubject}
+          />
         ) : (
           <Pressable onPress={onPress}>
-            <Text>{subject}</Text>
+            <Text
+              px={1}
+              py={0}
+            >{subject}
+            </Text>
           </Pressable>
         )
       }
