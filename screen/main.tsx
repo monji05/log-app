@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import shortid from 'shortid'
 import { View, VStack, ScrollView } from 'native-base'
 import LogScreen, { Log } from '../components/logScreen'
