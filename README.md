@@ -4,3 +4,9 @@
 編集もできる 
 # DEMO
 ![log-image](/doc/logscreen.png)
+
+# STRUCTURE
+$Project_root/  
+  ├App.tsx  
+  ├/screen  
+  └/components
