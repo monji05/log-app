@@ -1,6 +1,5 @@
-import React, { useState, useCallback } from 'react'
-import { Pressable, Input, ScrollView, View, Button, HStack, Center, VStack, Text } from 'native-base'
-import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native'
+import React from 'react'
+import { ScrollView, View, VStack } from 'native-base'
 import LogItem from './logItem'
 
 export type Log = {
@@ -40,7 +39,7 @@ export default function LogScreen(props: Props) {
           }
         </VStack>
       </ScrollView>
-    </View >
+    </View>
   )
 }
 

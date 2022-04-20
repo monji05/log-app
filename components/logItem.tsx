@@ -31,7 +31,7 @@ export default function LogItem(props: Props) {
         isEditing ? (
           <Input
             value={subject}
-            variant="underline"
+            variant="unstyled"
             fontSize={14}
             px={1}
             py={0}
