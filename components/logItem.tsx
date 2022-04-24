@@ -6,17 +6,17 @@ import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native'
 type Props = {
   item: Log
   subject: string
-  onPress: () => void
-  onFinishEditing: () => void
   isEditing: boolean
+  onPress: () => void
+  onBlur: () => void
 }
 
 export default function LogItem(props: Props) {
   const {
     item,
-    onPress,
-    onFinishEditing,
     isEditing,
+    onPress,
+    onBlur,
   } = props
 
   const [subject, setSubject] = useState(item.subject)
@@ -28,18 +28,17 @@ export default function LogItem(props: Props) {
   return (
     <View>
       {
-        isEditing ? (
+        isEditing ?
           <Input
             value={subject}
-            variant="unstyled"
-            fontSize={14}
+            variant="underlined"
+            fontSize={13}
             px={1}
             py={0}
-            autoFocus
-            onblur={onFinishEditing}
             onChange={onChangeSubject}
+            onBlur={onBlur}
           />
-        ) : (
+          :
           <Pressable onPress={onPress}>
             <Text
               px={1}
@@ -47,9 +46,8 @@ export default function LogItem(props: Props) {
             >{subject}
             </Text>
           </Pressable>
-        )
       }
-    </View>
+    </View >
   )
 }
 

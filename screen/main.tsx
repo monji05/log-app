@@ -7,7 +7,6 @@ import LogButton from '../components/logButton'
 export default function MainScreen() {
 
   const [logs, setLogs] = useState<Array<Log>>([])
-  const [isEditing, setEditing] = useState(false)
 
   const addLog = (arg: string) => {
     const newLog = {
@@ -15,7 +14,6 @@ export default function MainScreen() {
       subject: `[${new Date().toLocaleString()}] ${arg}`,
     }
     setLogs([newLog, ...logs])
-    setEditing(false)
   }
 
   return (
@@ -24,9 +22,6 @@ export default function MainScreen() {
         <VStack>
           <LogScreen
             logs={logs}
-            isEditing={isEditing}
-            onPress={() => setEditing(true)}
-            onFinishEditing={() => setEditing(false)}
           />
         </VStack>
       </ScrollView>
