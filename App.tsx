@@ -4,6 +4,7 @@ import { Center } from 'native-base'
 import AppContainer from './screen/app-container'
 import ThemeToggle from './components/theme-toggle'
 import MainScreen from './screen/main'
+import Memo from './components/memo'
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <View>
           <MainScreen />
           <ThemeToggle />
+          <Memo/>
         </View>
       </Center>
     </AppContainer>
