@@ -7,11 +7,17 @@ import LogButton from '../components/logButton'
 export default function MainScreen() {
 
   const [logs, setLogs] = useState<Array<Log>>([])
+  const date = new Date()
+  const year = date.getFullYear()
+  const month = date.getMonth()
+  const day = date.getDay()
+  const hours = date.getHours()
+  const time = date.getMinutes()
 
   const addLog = (arg: string) => {
     const newLog = {
       id: shortid.generate(),
-      subject: `[${new Date().toLocaleString()}] ${arg}`,
+      subject: `[${year}-${month}-${day} ${hours}:${time}] ${arg}`,
     }
     setLogs([newLog, ...logs])
   }

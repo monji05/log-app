@@ -1,4 +1,3 @@
-import React from 'react'
 import { Center, HStack, Button } from 'native-base'
 
 type Props = {
@@ -12,12 +11,12 @@ export default function LogButton(props: Props) {
       <HStack space={2}>
         <Button
           onPress={() => addLog('うんこ')}
-          colorScheme="amber">
+          backgroundColor="amber.900">
           うんこ
         </Button>
         <Button
           onPress={() => addLog('おしっこ')}
-          colorScheme="danger">
+          backgroundColor="amber.500">
           おしっこ
         </Button>
         <Button

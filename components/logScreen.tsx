@@ -19,8 +19,8 @@ export default function LogScreen(props: Props) {
   const [editingItemId, setEditingItemId] = useState("")
 
   return (
-    <View>
-      <ScrollView maxH="600">
+    <View px={3} py={3}>
+      <ScrollView h="500">
         <VStack>
           {logs.map(log => (
             <LogItem
